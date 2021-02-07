@@ -1,0 +1,27 @@
+{% extends 'homepage.html' %}
+
+{% block title %}{{Name}}{% endblock %}
+{% block main %}
+    <a href="/logout" style="float: right;"><button>Logout</button></a>
+    <br>
+    <form action="/" method="POST">
+        <label for="todo">TODO:</label>
+        <input type="text" name="todo" id="todo">
+        <label for="start">START:</label>
+        <input type="datetime-local" name="start" id="start">
+        <label for="end">END:</label>
+        <input type="datetime-local" name="end" id="end">
+        <input type="submit" name="submit" id="submit">
+    </form>
+    <h1>
+        {% for i in Todo%}
+            <hr>    
+            <h3>NUM   : {{i.num}}</h3>
+            <h3>TODO  : {{i.todo}}</h3>
+            <h3>START : {{i.end}}</h3>
+            <h3>END   : {{i.end}}</h3>
+            <a href="/delete/{{i.num}}" type="button">DELETE</a>
+        {% endfor %}
+        <hr>
+    </h1>
+{% endblock %}

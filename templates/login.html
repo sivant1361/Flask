@@ -1,0 +1,13 @@
+{% extends 'homepage.html' %}
+
+{% block title %}{{Name}}{% endblock %}
+{% block main %}
+    <h1>LOGIN PLEASE</h1>
+    <form action="/login" method="POST">
+        <label for="username">USERNAME:</label>
+        <input type="text" name="username" id="username">
+        <label for="password">PASSWORD:</label>
+        <input type="password" name="password" id="password">
+        <input type="submit" name="submit" id="submit">
+    </form>
+{% endblock %}
